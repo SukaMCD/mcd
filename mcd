@@ -21,7 +21,7 @@ while [ -h "$SOURCE" ]; do
 done
 ROOT_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 SCRIPT_DIR="$ROOT_DIR/scripts"
-VERSION="1.2.1"
+VERSION="1.3.0"
 
 # --- Fungsi Cek Status Laravel ---
 check_laravel() {
@@ -53,6 +53,7 @@ show_help() {
     printf "  ${CYAN}%-12s${NC} %s\n" "-optim"   "Flush cache & rebuild optimization"
     printf "  ${CYAN}%-12s${NC} %s\n" "-env"   "Switch between Local & Production env"
     printf "  ${CYAN}%-12s${NC} %s\n" "-log"     "Monitor laravel.log in real-time"
+    printf "  ${CYAN}%-12s${NC} %s\n" "-update"  "Update McdBash from GitHub"
     
     echo -e "\n${BOLD}UTILITIES${NC}"
     printf "  ${GRAY}%-12s${NC} %s\n" "-v"       "Show CLI version"
@@ -102,6 +103,18 @@ case "$1" in
             bash "$SCRIPT_DIR/mcdlog.sh"
         else
             echo -e "${RED}${BOLD}❌ Error: Kamu harus berada di root Laravel untuk melihat log!${NC}"
+        fi
+        ;;
+
+    -update)
+        echo -e "${CYAN}${BOLD}🔄 Checking for updates...${NC}"
+        cd "$ROOT_DIR" || exit
+        if [ -d ".git" ]; then
+            git pull origin main
+            chmod +x mcd setup.sh scripts/*.sh
+            echo -e "\n${GREEN}${BOLD}✔ Update Berhasil!${NC}"
+        else
+            echo -e "${RED}${BOLD}❌ Error:${NC} Folder ini bukan git repository. Silakan update manual."
         fi
         ;;
 

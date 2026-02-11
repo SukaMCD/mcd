@@ -13,7 +13,7 @@ GRAY='\033[38;5;244m'
 GREEN='\033[38;5;46m'
 NC='\033[0m'
 
-VERSION="1.2.0"
+VERSION="1.3.0"
 
 show_spinner() {
   local pid=$1
@@ -44,7 +44,7 @@ echo -e " | |  | | (_| (_| | |__| | |_) | |_| | | | | | | "
 echo -e " |_|  |_|\\___\\__,_|\\____/| .__/ \\__|_|_| |_| |_| "
 echo -e "                         | |                    "
 echo -e "                         |_|                    "
-echo -e " ${NC}${GRAY}v1.2.0${NC} ${ITALIC}${GRAY}by SukaMCD${NC}"
+echo -e " ${NC}${GRAY}v1.3.0${NC} ${ITALIC}${GRAY}by SukaMCD${NC}"
 echo -e ""
 echo -e " ${ITALIC}${GRAY}Laravel Optimizer by SukaMCD${NC}"
 echo -e "${GRAY}───────────────────────────────────────────────────${NC}"

@@ -11,7 +11,7 @@
 
 ### Premium Laravel Development Ecosystem
 
-[![Version](https://img.shields.io/badge/version-1.2.0-ff69b4?style=for-the-badge&logo=semantic-release&logoColor=white)](https://github.com/sukamcd/mcdbash)
+[![Version](https://img.shields.io/badge/version-1.3.0-ff69b4?style=for-the-badge&logo=semantic-release&logoColor=white)](https://github.com/sukamcd/mcdbash)
 [![Shell](https://img.shields.io/badge/bash-4.0+-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
 [![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
 [![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
@@ -19,11 +19,11 @@
 
 [![Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/sukamcd/mcdbash/graphs/commit-activity)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](http://makeapullrequest.com)
-[![Platform](https://img.shields.io/badge/platform-linux-lightgrey?style=for-the-badge&logo=linux&logoColor=white)](https://www.linux.org/)
+[![Platform](https://img.shields.io/badge/platform-linux%20%7C%20windows-lightgrey?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/sukamcd/mcdbash)
 
 **Toolkit CLI yang powerful dan elegan untuk mempercepat development Laravel dengan antarmuka terminal yang memukau**
 
-[Fitur](#-fitur-unggulan) • [Instalasi](#-instalasi) • [Dokumentasi](#-dokumentasi) • [Kontribusi](#-kontribusi)
+[Fitur](#-fitur-unggulan) • [Instalasi](#-instalasi) • [Update](#-fitur-update) • [Dokumentasi](#-dokumentasi)
 
 </div>
 
@@ -125,6 +125,38 @@ Pengalaman visual terbaik:
 </td>
 </tr>
 </table>
+
+---
+
+---
+
+## Instalasi
+
+### Linux / macOS
+
+1. Masuk ke folder McdBash.
+2. Jalankan script setup:
+   ```bash
+   bash setup.sh
+   ```
+3. Restart terminal atau jalankan `source ~/.bashrc`.
+
+### Windows (Git Bash)
+
+1. Pastikan sudah menginstall [Git for Windows](https://git-scm.com/download/win).
+2. Masuk ke folder McdBash.
+3. Klik 2x file `setup.bat`.
+4. Restart terminal (CMD, PowerShell, atau Git Bash).
+
+---
+
+## Fitur Update
+
+Sekarang kamu bisa memperbarui McdBash langsung dari terminal:
+
+```bash
+mcd -update
+```
 
 ---
 
@@ -347,49 +379,6 @@ Temukan bug atau punya ide fitur? [Buat issue](https://github.com/sukamcd/mcdbas
 - Steps to reproduce (untuk bugs)
 - Expected vs actual behavior
 - Environment info (OS, Bash version, dll)
-
----
-
-## Changelog
-
-### [1.2.0] - 2026-02-08
-
-#### Added
-
-- Premium UI redesign dengan 256-bit color palette
-- ASCII art headers untuk semua modul
-- Improved spinner animations
-- Box layouts untuk summaries
-
-#### Changed
-
-- Konsistensi visual di semua scripts
-- Better error messages
-- Improved package selection interface
-
-#### Fixed
-
-- Minor bug fixes
-- Performance improvements
-- Better error handling
-
-<details>
-<summary>Previous Versions</summary>
-
-### [1.1.0] - 2026-01-15
-
-- Added environment switcher
-- Improved log monitoring
-- Bug fixes
-
-### [1.0.0] - 2025-12-01
-
-- Initial release
-- Laravel installer
-- Development mode
-- Basic optimizer
-
-</details>
 
 ---
 
