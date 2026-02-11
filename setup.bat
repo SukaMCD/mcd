@@ -1,8 +1,7 @@
 @echo off
-setlocal
-chcp 65001 >nul
+setlocal EnableExtensions EnableDelayedExpansion
 
-:: --- Define Escape Character for Colors ---
+:: --- Define Escape Character for Colors (Standard Method) ---
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do set ESC=%%b
 
 :: --- Styling ---
@@ -11,9 +10,12 @@ set "CYAN=%ESC%[38;5;51m"
 set "PINK=%ESC%[38;5;198m"
 set "GRAY=%ESC%[38;5;244m"
 set "GREEN=%ESC%[38;5;46m"
+set "RED=%ESC%[38;5;196m"
 set "NC=%ESC%[0m"
 
+:: Clear screen after color setup to avoid seeing the 'prompt' artifact
 cls
+
 echo %PINK%%BOLD%
 echo   __  __         _  _____      _                
 echo  ^|  \/  ^|       ^| ^|/ ____^|    ^| ^|               
@@ -43,6 +45,8 @@ if %ERRORLEVEL% EQU 0 (
     echo   %RED%❌ Gagal memperbarui PATH. Coba jalankan sebagai Administrator.%NC%
 )
 
+:: Use UTF-8 for final message if possible
+chcp 65001 >nul 2>&1
 echo.
 echo %GREEN%%BOLD%INSTALASI BERHASIL!%NC%
 echo %GRAY%Silakan RESTART terminal kamu (CMD, PowerShell, atau Git Bash).%NC%
