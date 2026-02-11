@@ -11,9 +11,17 @@ RED='\033[38;5;196m'
 GRAY='\033[38;5;244m'
 NC='\033[0m' # No Color
 
-# Path ke folder scripts
-SCRIPT_DIR="/opt/mcd/scripts"
-VERSION="1.2.0"
+# --- Path Detection ---
+# Cari directory asli script (follow symlinks)
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+ROOT_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+SCRIPT_DIR="$ROOT_DIR/scripts"
+VERSION="1.2.1"
 
 # --- Fungsi Cek Status Laravel ---
 check_laravel() {
@@ -98,7 +106,7 @@ case "$1" in
         ;;
 
     -v|--version)
-        echo -e "${PINK}${BOLD}McdBash${NC} version ${CYAN}$VERSION${NC} ${GRAY}(Arch-Linux Compatible)${NC}"
+        echo -e "${PINK}${BOLD}McdBash${NC} version ${CYAN}$VERSION${NC} ${GRAY}(Cross-Platform)${NC}"
         ;;
 
     -h|--help|"")
